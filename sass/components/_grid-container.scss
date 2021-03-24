@@ -1,0 +1,22 @@
+.grid-container {
+  margin: 0 auto;
+  // background-color: slategray;
+
+  &__grid {
+    width: 40vmin;
+    height: 40vmin;
+    background: #fff;
+    border: solid var(--color-black);
+    border-color: var(--color-black);
+    border-width: 5px 3px 3px 5px;
+    border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+    transform: rotate(2deg);
+
+    opacity: 0;
+    animation: tada 1s ease-in-out forwards 4s;
+  }
+
+  &__slider {
+    // width: 60rem;
+  }
+}

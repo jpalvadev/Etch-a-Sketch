@@ -1,0 +1,236 @@
+:root {
+  --font-primary: 'Gloria Hallelujah', cursive;
+  --color-black: #444444;
+}
+
+@keyframes title-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes icon-shake-1 {
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes icon-shake-2 {
+  0% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  10% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  20% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  30% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  60% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  70% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  80% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+  90% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+}
+
+@keyframes icon-shake-3 {
+  0% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  10% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  20% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  50% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  60% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  90% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  100% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+}
+
+@keyframes tada {
+  to {
+    opacity: 1;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  text-align: center;
+  height: 100%;
+  margin: 0 auto;
+  font-family: var(--font-primary);
+}
+
+.grid-container {
+  margin: 0 auto;
+}
+
+.grid-container__grid {
+  width: 40vmin;
+  height: 40vmin;
+  background: #fff;
+  border: solid var(--color-black);
+  border-color: var(--color-black);
+  border-width: 5px 3px 3px 5px;
+  border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+  transform: rotate(2deg);
+  opacity: 0;
+  animation: tada 1s ease-in-out forwards 4s;
+}
+
+.range-slider {
+  -webkit-appearance: none;
+  background-image: url("/images/SLIDER.png");
+}
+
+.container-img {
+  position: relative;
+  background-color: red;
+  display: inline-block;
+}
+
+.container-img__img {
+  display: block;
+  width: 100vw;
+  height: 74.57vw;
+  /* height:width ratio = 9/16 = .5625  */
+  background: pink;
+  max-height: 99vh;
+  max-width: 134.09vh;
+  /* 16/9 = 1.778 */
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  padding-top: 14vmin;
+}
+
+.title__svg {
+  width: 50%;
+}
+
+.middle-container {
+  margin-top: 3vmin;
+  display: flex;
+  flex: 1;
+}
+
+.tools-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 0;
+  animation: tada 1s forwards 4s;
+}
+
+.tools-container img {
+  height: 10vmin;
+  width: auto;
+}
+
+.tools-container__pencil {
+  animation: icon-shake-1 1.25s steps(1) infinite;
+}
+
+.tools-container__eraser {
+  animation: icon-shake-2 1.25s steps(1) infinite;
+}
+
+.tools-container__color-picker {
+  animation: icon-shake-3 1.25s steps(1) infinite;
+}
+/*# sourceMappingURL=main.css.map */

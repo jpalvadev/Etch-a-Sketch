@@ -1,0 +1,16 @@
+.range-slider {
+  -webkit-appearance: none;
+  background-image: url('/images/SLIDER.png');
+}
+
+// SVGS IN CSS!!!!
+// .myComponent {
+//   background-image: url('data:image/svg+xml;utf8,<svg> ... </svg>');
+// }
+// :root {
+//   --firstSVG: url('data:image/svg+xml;utf8,<svg> ... </svg>');
+//   --secondSVG: url('data:image/svg+xml;utf8,<svg> ... </svg>');
+// }
+// .myComponent {
+//   background-image: var(--firstSVG);
+// }

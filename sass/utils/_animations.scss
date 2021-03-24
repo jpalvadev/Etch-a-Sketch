@@ -1,0 +1,129 @@
+@keyframes title-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes icon-shake-1 {
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+@keyframes icon-shake-2 {
+  0% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  10% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  20% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  30% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  60% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  70% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  80% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+  90% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+}
+@keyframes icon-shake-3 {
+  0% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  10% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  20% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  50% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  60% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  90% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  100% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+}
+
+@keyframes tada {
+  to {
+    opacity: 1;
+  }
+}
+
+// transition-delay: 0.8s;
+// animation: animate 0.8s steps(8) forwards;
+// @keyframes animate {
+//   0% {
+//     background-position-y: 0;
+//   }
+//   100% {
+//     background-position-y: -48rem;
+//   }
+// }
