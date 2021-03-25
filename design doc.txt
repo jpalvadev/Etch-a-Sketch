@@ -1,2 +1,4 @@
 font: "Gloria Hallelujah", cursive
 line-height: 1.8 (probar)
+
+CLEAR THE CANVAS

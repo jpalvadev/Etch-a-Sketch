@@ -1,16 +1,26 @@
 .range-slider {
-  -webkit-appearance: none;
-  background-image: url('/images/SLIDER.png');
-}
+  margin-top: 0.5rem;
 
-// SVGS IN CSS!!!!
-// .myComponent {
-//   background-image: url('data:image/svg+xml;utf8,<svg> ... </svg>');
-// }
-// :root {
-//   --firstSVG: url('data:image/svg+xml;utf8,<svg> ... </svg>');
-//   --secondSVG: url('data:image/svg+xml;utf8,<svg> ... </svg>');
-// }
-// .myComponent {
-//   background-image: var(--firstSVG);
-// }
+  &__slider {
+    width: 70%;
+    -webkit-appearance: none;
+    border-top: 2px solid var(--color-black);
+    transform: rotate(1deg);
+    height: 0.1rem;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 4vmin;
+      width: 4vmin;
+      background: url('/images/thumb.gif');
+      background-size: 4vmin;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
+}

@@ -13,10 +13,11 @@ html {
 }
 
 body {
-  // max-width: 110rem;
   text-align: center;
   height: 100%;
-  // height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   font-family: var(--font-primary);
 }
