@@ -16,8 +16,10 @@
     border-color: var(--color-black);
     border-width: 5px 3px 3px 5px;
     border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
-    transform: rotate(2deg);
+    // transform: rotate(2deg);
     margin: 0 auto;
+    display: grid;
+    overflow: hidden;
 
     @media (min-width: 600px) {
       width: 40vmin;
@@ -30,5 +32,9 @@
 
     // opacity: 0;
     // animation: tada 1s ease-in-out forwards 4s;
+  }
+
+  &__grid-div {
+    border: 1px solid #f3f3f3;
   }
 }

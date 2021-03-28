@@ -243,7 +243,7 @@ h2 {
 
 .title {
   padding-top: 6vmin;
-  padding-bottom: 5vmin;
+  padding-bottom: 2vmin;
   grid-row: 1 / 1;
   grid-column: 1 / 4;
 }
@@ -268,8 +268,9 @@ h2 {
   border-color: var(--color-black);
   border-width: 5px 3px 3px 5px;
   border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
-  transform: rotate(2deg);
   margin: 0 auto;
+  display: grid;
+  overflow: hidden;
 }
 
 @media (min-width: 600px) {
@@ -284,6 +285,10 @@ h2 {
     width: 55vmin;
     height: 55vmin;
   }
+}
+
+.grid-container__grid-div {
+  border: 1px solid #f3f3f3;
 }
 
 .tools-container {
@@ -316,6 +321,7 @@ h2 {
 }
 
 .buttons-container {
+  position: relative;
   margin: 0 auto;
   grid-row: 2 / 3;
   grid-column: 3 / 4;
@@ -324,19 +330,21 @@ h2 {
   justify-content: space-evenly;
 }
 
-.buttons-container__btn-svg {
-  width: 100%;
-  height: auto;
-}
-
 .buttons-container__color-btn {
   position: relative;
 }
 
-.buttons-container__color-btn h2 {
+.buttons-container__input-color {
   position: absolute;
-  top: 0.5vmin;
-  right: 2vmin;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.buttons-container__btn-svg {
+  width: 100%;
+  height: auto;
 }
 
 .buttons-container__radio-btn {

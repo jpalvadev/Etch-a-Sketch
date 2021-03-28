@@ -1,4 +1,5 @@
 .buttons-container {
+  position: relative;
   margin: 0 auto;
   grid-row: 2 / 3;
   grid-column: 3 / 4;
@@ -6,23 +7,47 @@
   flex-direction: column;
   justify-content: space-evenly;
 
-  &__btn-svg {
-    width: 100%;
-    height: auto;
-  }
-
   &__color-btn {
     position: relative;
-
-    h2 {
-      position: absolute;
-      top: 0.5vmin;
-      right: 2vmin;
-      // top: 2%;
-      // bottom: 25%;
-      // right: 10%;
-    }
   }
+
+  &__input-color {
+    position: absolute;
+    opacity: 0;
+    // width: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  &__btn-svg {
+    // width: 80%;
+    width: 100%;
+    height: auto;
+    // position: relative;
+    // transform: translateX(-50%);
+    // transform: translateY(-50%);
+  }
+
+  // &__color-btn {
+  //   position: relative;
+
+  //   h2 {
+  //     position: absolute;
+  //     // top: 0.5vmin;
+  //     // right: 2vmin;
+  //     // top: 2%;
+  //     // bottom: 25%;
+  //     // padding-bottom: 5%;
+  //     // right: 10%;
+  //     // top: 50%;
+  //     // margin-top: -50%;
+  //     top: 0;
+  //     // margin-top: 0;
+  //     // right: 0;
+  //     // transform: translateY(-50%);
+  //   }
+  // }
 
   &__radio-btn {
     width: 3vmin;
