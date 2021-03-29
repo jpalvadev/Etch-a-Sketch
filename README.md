@@ -2,7 +2,7 @@
 
 This Project is part of The Odin Project's Curriculum
 
-- [Live Here](https://jpalvadev.github.io/rock-paper-scissors-lizard-spock-graphics/)
+- [Live Here](https://jpalvadev.github.io/Etch-a-Sketch/)
 
 ## Things I learned - getting better at
 
