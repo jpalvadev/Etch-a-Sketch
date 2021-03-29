@@ -299,8 +299,8 @@ h2 {
 .grid-container__grid {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+  width: 77.9%;
   height: 90%;
-  width: 0;
   background: #fff;
   border: solid var(--color-black);
   border-color: var(--color-black);

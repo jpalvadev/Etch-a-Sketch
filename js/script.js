@@ -65,10 +65,10 @@ rangeSlider.oninput = () => {
 gridSizeText.textContent = `${rangeSlider.value} X ${rangeSlider.value}`;
 
 const calcWidth = () => {
-  const canvasWidth = window
+  const canvasHeight = window
     .getComputedStyle(canvas, null)
     .getPropertyValue('height');
-  canvas.style.width = canvasWidth;
+  canvas.style.width = canvasHeight;
 };
 
 const updateCanvasSize = () => {
@@ -197,10 +197,12 @@ const init = () => {
   clearAllBtn.addEventListener('click', updateCanvasSize);
   mediaqueryList.addEventListener('change', mediaqueryDetector);
   updateCanvasSize();
-  calcWidth();
+
+  // Uncomment to make the canvas a perfect square, but check out _grid-container.scss before doing so
+  // calcWidth();
+  // window.onresize = calcWidth;
   drawColorLines();
   drawTitle();
-  window.onresize = calcWidth;
   mediaqueryDetector(mediaqueryList);
 };
 
