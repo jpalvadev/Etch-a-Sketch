@@ -57,7 +57,7 @@
 
 // CHECKED STYLES
 [type='radio']:checked + img {
-  background-image: url('/images/checked.png');
+  background-image: url('../images/checked.png');
   background-size: contain;
   animation: icon-shake-2 1.25s steps(1) infinite;
 }
