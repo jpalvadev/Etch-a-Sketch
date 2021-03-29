@@ -300,7 +300,7 @@ h2 {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
   height: 90%;
-  width: auto;
+  width: 0;
   background: #fff;
   border: solid var(--color-black);
   border-color: var(--color-black);
