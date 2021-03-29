@@ -1,15 +1,30 @@
 .range-slider {
-  margin-top: 0.5rem;
+  align-self: center;
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
 
   &__slider {
     width: 70%;
     -webkit-appearance: none;
+    -moz-appearance: none;
+
     border-top: 2px solid var(--color-black);
     transform: rotate(1deg);
     height: 0.1rem;
 
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
+      height: 4vmin;
+      width: 4vmin;
+      background: url('/images/thumb.gif');
+      background-size: 4vmin;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &::-moz-range-thumb {
+      -moz-appearance: none;
+      border: none;
       height: 4vmin;
       width: 4vmin;
       background: url('/images/thumb.gif');

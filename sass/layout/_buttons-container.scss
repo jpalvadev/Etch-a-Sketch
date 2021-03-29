@@ -1,6 +1,6 @@
 .buttons-container {
   position: relative;
-  margin: 0 auto;
+  margin: 0 2vmin;
   grid-row: 2 / 3;
   grid-column: 3 / 4;
   display: flex;
@@ -14,56 +14,22 @@
   &__input-color {
     position: absolute;
     opacity: 0;
-    // width: 100%;
     width: 100%;
     height: 100%;
     z-index: 2;
   }
 
   &__btn-svg {
-    // width: 80%;
     width: 100%;
     height: auto;
-    // position: relative;
-    // transform: translateX(-50%);
-    // transform: translateY(-50%);
   }
 
-  // &__color-btn {
-  //   position: relative;
-
-  //   h2 {
-  //     position: absolute;
-  //     // top: 0.5vmin;
-  //     // right: 2vmin;
-  //     // top: 2%;
-  //     // bottom: 25%;
-  //     // padding-bottom: 5%;
-  //     // right: 10%;
-  //     // top: 50%;
-  //     // margin-top: -50%;
-  //     top: 0;
-  //     // margin-top: 0;
-  //     // right: 0;
-  //     // transform: translateY(-50%);
-  //   }
-  // }
+  &__radio-btn-container {
+    transition: opacity 0.3s ease-in-out;
+  }
 
   &__radio-btn {
     width: 3vmin;
-
-    &--1 {
-      animation: icon-shake-2 1.25s steps(1) infinite;
-    }
-    &--2 {
-      animation: icon-shake-3 1.25s steps(1) infinite;
-    }
-    &--3 {
-      animation: icon-shake-1 1.25s steps(1) infinite;
-    }
-    &--4 {
-      animation: icon-shake-4 1.25s steps(1) infinite;
-    }
   }
 
   & label {
@@ -74,44 +40,24 @@
       margin-left: 4vmin;
     }
   }
-
-  // &__btn {
-  //   position: relative;
-
-  //   img {
-  //     width: 100%;
-  //     height: auto;
-  //   }
-
-  //   h2 {
-  //     position: absolute;
-  //     // top: 0;
-  //     bottom: 3px;
-  //     right: 15px;
-  //     // width: 100%;
-  //     height: 100%;
-  //   }
-  // }
 }
 
-/* HIDE RADIO */
+// HIDE RADIO
 [type='radio'] {
   position: absolute;
   opacity: 0;
-  // width: 100%;
   width: 0;
   height: 0;
-  // vertical-align: bottom;
 }
 
-/* IMAGE STYLES */
+// IMAGE STYLES
 [type='radio'] + img {
   cursor: pointer;
-  // width: 4vmin;
 }
 
-/* CHECKED STYLES */
+// CHECKED STYLES
 [type='radio']:checked + img {
   background-image: url('/images/checked.png');
   background-size: contain;
+  animation: icon-shake-2 1.25s steps(1) infinite;
 }

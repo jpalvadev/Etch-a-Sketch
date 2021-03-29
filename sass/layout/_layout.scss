@@ -6,7 +6,6 @@
 
   &__img {
     display: block;
-    // margin-top: 10rem;
     // 2533 x 1889 img dimensions
     width: 100vw;
     height: 74.57vw; // height / width * 100
@@ -19,9 +18,8 @@
   position: absolute;
   width: 85%;
   height: 81%;
-  // background-color: khaki;
   display: grid;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content 1fr min-content;
   grid-template-columns: 1fr 3fr 1fr;
 }
 
