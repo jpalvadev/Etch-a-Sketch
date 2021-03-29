@@ -210,7 +210,7 @@ h2 {
   -webkit-appearance: none;
   height: 4vmin;
   width: 4vmin;
-  background: url("/images/thumb.gif");
+  background: url("../images/thumb.gif");
   background-size: 4vmin;
   background-repeat: no-repeat;
   background-position: center;
@@ -221,7 +221,7 @@ h2 {
   border: none;
   height: 4vmin;
   width: 4vmin;
-  background: url("/images/thumb.gif");
+  background: url("../images/thumb.gif");
   background-size: 4vmin;
   background-repeat: no-repeat;
   background-position: center;
