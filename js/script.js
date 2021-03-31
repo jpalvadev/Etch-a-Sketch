@@ -6,16 +6,15 @@ const colorLines = document.querySelector('.color-lines');
 const rangeSlider = document.querySelector('.range-slider__slider');
 const canvas = document.querySelector('.grid-container__grid');
 const inputColor = document.querySelector('.buttons-container__input-color');
-inputColor.value = '#444444';
 const clearAllBtn = document.querySelector('.clear-all');
 const radioBtns = document.querySelectorAll('input[type="radio"]');
 const radioBtnContainer = document.querySelectorAll(
   '.buttons-container__radio-btn-container'
 );
-let canvasSize = 51;
 const gridSizeText = document.querySelector(
   '.grid-container__grid-size--right'
 );
+let canvasSize = 51;
 let prevTouchedDiv = '';
 let currentTouchedDiv = '';
 
@@ -33,29 +32,27 @@ const mediaqueryDetector = (tall) => {
 
 /////////////
 // ANIMATIONS
+const setupSvgAnimation = (svg) => {
+  svg.style.animation = ``;
+  svg.style.strokeDasharray = svg.getTotalLength();
+  svg.style.strokeDashoffset = svg.getTotalLength();
+};
 const drawTitle = () => {
   titleText.forEach((letter, i) => {
-    letter.style.strokeDasharray = letter.getTotalLength();
-    letter.style.strokeDashoffset = letter.getTotalLength();
+    setupSvgAnimation(letter);
     letter.style.animation = `title-animation 0.5s ease forwards ${
       0.25 * i - 3
     }s`;
   });
 };
-
 const drawModalText = () => {
   modalText.forEach((word, i) => {
-    word.style.animation = ``;
-    word.style.strokeDasharray = word.getTotalLength();
-    word.style.strokeDashoffset = word.getTotalLength();
+    setupSvgAnimation(word);
     word.style.animation = `title-animation 1.5s linear forwards ${1.5 * i}s`;
   });
 };
-
 const drawColorLines = () => {
-  colorLines.style.animation = ``;
-  colorLines.style.strokeDasharray = colorLines.getTotalLength();
-  colorLines.style.strokeDashoffset = colorLines.getTotalLength();
+  setupSvgAnimation(colorLines);
   colorLines.style.animation = `title-animation 2.5s ease-in-out forwards`;
 };
 
@@ -85,7 +82,6 @@ const updateCanvasSize = () => {
     const canvasDiv = document.createElement('div');
     canvasDiv.classList.add('grid-container__grid-div');
     canvasDiv.id = i;
-
     canvasDiv.style.backgroundColor = 'rgb(255, 255, 255)';
     divsContainer.appendChild(canvasDiv);
   }
@@ -94,23 +90,24 @@ const updateCanvasSize = () => {
 
 //////////////
 // COLOR LOGIC
+const removeRGBText = (rgbString) => {
+  return rgbString.slice(4, -1).split(',');
+};
 const getRandomNumber = () => {
   return Math.floor(Math.random() * 255);
 };
-
 const getRandomColor = () => {
   return `rgb(${getRandomNumber()},${getRandomNumber()},${getRandomNumber()})`;
 };
 
 const modifyColor = (target, command) => {
-  let colorArr = target.style.backgroundColor
-    .slice(4, -1)
-    .split(',')
-    .map((c) => {
-      if (command === 'lighten') return +c + 25;
-      else return +c - 25;
-    });
-  return `rgb( ${colorArr[0]}, ${colorArr[1]}, ${colorArr[2]})`;
+  let newColor = removeRGBText(target.style.backgroundColor)
+    .map((color) => {
+      if (command === 'lighten') return +color + 25;
+      else return +color - 25;
+    })
+    .join(',');
+  return `rgb(${newColor})`;
 };
 
 const paintStyle = (target) => {
@@ -134,17 +131,17 @@ const setActiveTool = (e) => {
 
 ///////////////
 // COLOR PICKER
-const rgbArrayToHex = (rgb) => {
-  const hex = Number(rgb).toString(16);
-  if (hex.length < 2) hex = '0' + hex;
-  return hex;
-};
 const rgbToHex = (rgb) => {
-  let colorArr = rgb.slice(4, -1).split(',');
-  return `#${rgbArrayToHex(colorArr[0])}${rgbArrayToHex(
-    colorArr[1]
-  )}${rgbArrayToHex(colorArr[2])}`;
+  const pickedColor = removeRGBText(rgb)
+    .map((color) => {
+      let hex = Number(color).toString(16);
+      if (hex.length < 2) hex = '0' + hex;
+      return hex;
+    })
+    .join('');
+  return `#${pickedColor}`;
 };
+
 const getColorPicked = (e) => {
   if (!tools[2].classList.contains('active')) return;
   const divColor = e.target.style.backgroundColor;
@@ -194,6 +191,7 @@ const init = () => {
     canvasSize = rangeSlider.value;
     updateCanvasSize();
   });
+  inputColor.value = '#444444';
   inputColor.addEventListener('change', function (e) {
     colorLines.style.stroke = inputColor.value;
     radioBtns[0].checked = true;
