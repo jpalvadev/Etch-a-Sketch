@@ -16,6 +16,8 @@ let canvasSize = 51;
 const gridSizeText = document.querySelector(
   '.grid-container__grid-size--right'
 );
+let prevTouchedDiv = '';
+let currentTouchedDiv = '';
 
 ///////////////////////////////
 // DYNAMIC MEDIA QUERY DETECTOR
@@ -62,7 +64,6 @@ const drawColorLines = () => {
 rangeSlider.oninput = () => {
   gridSizeText.textContent = `${rangeSlider.value} X ${rangeSlider.value}`;
 };
-gridSizeText.textContent = `${rangeSlider.value} X ${rangeSlider.value}`;
 
 const calcWidth = () => {
   const canvasHeight = window
@@ -83,6 +84,7 @@ const updateCanvasSize = () => {
   for (let i = 0; i < canvasSize * canvasSize; i++) {
     const canvasDiv = document.createElement('div');
     canvasDiv.classList.add('grid-container__grid-div');
+    canvasDiv.id = i;
 
     canvasDiv.style.backgroundColor = 'rgb(255, 255, 255)';
     divsContainer.appendChild(canvasDiv);
@@ -132,22 +134,22 @@ const setActiveTool = (e) => {
 
 ///////////////
 // COLOR PICKER
-const rgbToHex = (rgb) => {
+const rgbArrayToHex = (rgb) => {
   const hex = Number(rgb).toString(16);
   if (hex.length < 2) hex = '0' + hex;
   return hex;
 };
-const rgbArrayToHex = (rgb) => {
+const rgbToHex = (rgb) => {
   let colorArr = rgb.slice(4, -1).split(',');
-  return `#${rgbToHex(colorArr[0])}${rgbToHex(colorArr[1])}${rgbToHex(
-    colorArr[2]
-  )}`;
+  return `#${rgbArrayToHex(colorArr[0])}${rgbArrayToHex(
+    colorArr[1]
+  )}${rgbArrayToHex(colorArr[2])}`;
 };
 const getColorPicked = (e) => {
   if (!tools[2].classList.contains('active')) return;
   const divColor = e.target.style.backgroundColor;
   colorLines.style.stroke = divColor;
-  inputColor.value = rgbArrayToHex(divColor);
+  inputColor.value = rgbToHex(divColor);
   drawColorLines();
 };
 
@@ -168,13 +170,19 @@ const paintDivMouse = (e) => {
 
 const paintDivTouch = (e) => {
   e.preventDefault();
+
   const changedTouch = e.changedTouches[0];
   const target = document.elementFromPoint(
     changedTouch.clientX,
     changedTouch.clientY
   );
+  currentTouchedDiv = target.id;
+
   if (!target.closest('.grid-container__grid-div')) return;
-  getActiveTool(target);
+  if (currentTouchedDiv !== prevTouchedDiv) {
+    prevTouchedDiv = currentTouchedDiv;
+    getActiveTool(target);
+  }
 };
 
 const init = () => {
@@ -197,6 +205,7 @@ const init = () => {
   clearAllBtn.addEventListener('click', updateCanvasSize);
   mediaqueryList.addEventListener('change', mediaqueryDetector);
   updateCanvasSize();
+  gridSizeText.textContent = `${rangeSlider.value} X ${rangeSlider.value}`;
 
   // Uncomment to make the canvas a perfect square, but check out _grid-container.scss before doing so
   // calcWidth();
